@@ -1,41 +1,89 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* Page background */
 body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-}
-
-#images_container {
-    margin-top: 20px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    color: #fff;
 }
 
+/* Title */
+h1 {
+    margin-bottom: 25px;
+    font-size: 2.5rem;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Form container */
+#prompt_form {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Input */
+#prompt_input {
+    flex: 1;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+/* Button */
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Images container */
+#images_container {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+}
+
+/* Image cards (use this class in JS if possible) */
 .img_box {
-    position: relative;
-    width: 200px;
-    height: 200px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 .img_box img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.img_box a {
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
-    background: #000;
-    color: #fff;
-    padding: 4px 6px;
-    text-decoration: none;
-    font-size: 12px;
-}
-
-.img_box.loading {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #eee;
+    height: auto;
+    display: block;
 }
